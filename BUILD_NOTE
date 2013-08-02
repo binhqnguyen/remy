@@ -1,0 +1,11 @@
+How to compile (Tested with Ubuntu 13.04 32bit and MAC OSX 64bit)
+------------------
+1. Prerequisites:
+  - GCC/G++-4.7: this is default g++ in Ubuntu 13.04. MAC OSX with XCode 4.6.3 comes with g++-4.2 and clang (another c++ compiler). A test with clang didn't succeed, so g++-4.7 is needed to be installed. If you have brew with homebrew tapped (by 'brew tap homebrew/versions'), use 'brew install g++-4.7'.
+  - Boost: this library could be installed by 'sudo apt-get install libboost-all-dev' in Ubuntu, or 'brew install boost' in MAC OSX.
+  - Protobuf: available through package libprotobuf-all in Ubuntu, or protobuf package in MAC OSX.
+  
+2. Notice:
+  - In Ubuntu, simply use 'make' to build Remy.
+  - In MAC OSX, usually the g++ version is 4.2 as default. The new installed g++-4.7 is located in /usr/local/bin. To make g++-4.7 executable in terminal, add its binary path to the system PATH: 'export PATH=/usr/local/bin:$PATH'. After that, implicitly tell the Makefile to use g++-4.7 by changing: 'CXX ?= g++' to 'CXX = g++-4.7'.
+  
